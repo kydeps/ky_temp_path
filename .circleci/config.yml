@@ -1,0 +1,31 @@
+version: 2.1
+
+orbs:
+  ci: kydeps/ci@dev:alpha
+
+jobs:          
+  build:
+    executor: ci/kydeps
+    working_directory: "~/src"
+    steps:
+      - checkout
+      - run: mkdir ~/build
+      - run: cmake -S ~/src -B ~/build
+      - run: cmake --build ~/build
+      - run: cd ~/build && ctest 
+
+  build-standalone-example:
+    executor: ci/kydeps
+    working_directory: "~/src"
+    steps:
+      - checkout
+      - run: mkdir ~/build
+      - run: cmake -S ~/src/standalone-example -B ~/build
+      - run: cmake --build ~/build
+      - run: ~/build/test
+
+workflows:
+  all:
+    jobs:
+      - build
+      - build-standalone-example
