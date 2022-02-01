@@ -1,5 +1,5 @@
-#ifndef KY_TEMP_PATH__H
-#define KY_TEMP_PATH__H
+#ifndef KY_TEMP_PATH_H
+#define KY_TEMP_PATH_H
 
 #include <filesystem>
 
@@ -21,4 +21,4 @@ public:
 
 }  // namespace ky
 
-#endif  // KY_TEMP_PATH__H
+#endif  // KY_TEMP_PATH_H

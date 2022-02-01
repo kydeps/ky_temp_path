@@ -6,7 +6,7 @@ project(
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(KYDEPS_BOILERPLATE_CLANG_TIDY OFF)
+set(KYDEPS_BOILERPLATE_CLANG_TIDY ON)
 set(KYDEPS_TARGETS glog GTest)
 
 include(FetchContent)
